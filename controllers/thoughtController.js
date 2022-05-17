@@ -1,4 +1,4 @@
-const { countReset } = require('console')
+// const { countReset } = require('console')
 const { Thought, User } = require('../models')
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
             .then((thought) =>
                 !thought
                     ? res.status(404).json({ message: 'no thought with this id' })
-                    : res.json(thought));
+                    : res.json(thoughtText, username, userId));
     },
     createThought(req, res) {
         Thought.create(req.body)
