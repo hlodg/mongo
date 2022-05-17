@@ -1,9 +1,18 @@
-const { userInfo } = require("os");
+const router = require("express").Router();
 
-const routes = require("express").Router();
+const{
+    getUsers,
+    getOneUser,
+    createUser,
+    addUser,
+    deleteUser
+} = require ('../../controllers/userController')
 
-routes.get('/users', (req,res)=>{
-    
-})
+router.route('/').get(getUsers).post(createUser)
 
-module.exports= routes
+router.route('/:userId').get(getOneUser).delete(deleteUser)
+
+router.route('/:userId/thought').post(addUser);
+
+
+module.exports= router
