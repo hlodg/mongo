@@ -12,13 +12,38 @@ const user = new mongoose.Schema ({
         require: true,
         unique: true        
     },
-    thoughts: {
-        // foreign key referencing id of thought model
-    },
-    friends: {
+    thoughts: [
+        {
+            type: Schema.Types.ObjectId, 
+            ref: 'User'
+        }
+    ],
+    friends: 
         // foreign key reference user model
-    }
+        [
+            {
+                type: Schema.Types.ObjectId, 
+                ref: 'User'
+            }
+        ]
+    },
 
-})
+    toJSON: {
+        vrituals: true
+    },
 
+});
+
+
+
+thoughtSchema 
+  .vritual('friendCount')
+  .get(function(){
+      return `${this.friends.length}`
+  })
 // Create a virtual called `friendCount` that retrieves the length of the user's `friends` array field on query.
+
+
+const User = model('user', userSchema);
+
+module.exports = User;

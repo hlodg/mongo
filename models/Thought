@@ -11,7 +11,6 @@ const thought = new mongoose.Schema({
     createdAt:{
         type: Date,
         default: Date.now
-        // * Use a getter method to format the timestamp on query
     },
     username:{
         type: String,
@@ -33,3 +32,6 @@ thoughtSchema
   })
 
 // Create a virtual called `reactionCount` that retrieves the length of the thought's `reactions` array field on query.
+const Thought = model('though', thoughtSchema);
+
+module.exports = Thought;
