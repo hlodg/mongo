@@ -1,6 +1,6 @@
 const {Schema, Types}=require('mongoose');
 
-const thought = new Schema({
+const reactionSchema = new Schema({
     reactionId:[
         // * Use Mongoose's ObjectId data type
         // * Default value is set to a new ObjectId

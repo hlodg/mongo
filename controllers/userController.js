@@ -17,9 +17,11 @@ module.exports = {
           });
       },
       createUser(req, res) {
+        console.log('You are adding an user');
+        //   console.log (req)
         User.create(req.body)
-          .then((username) => res.json({username, email}))
-          .catch((err) => res.status(500).json(err));
+          .then((userdata) => res.json(userdata))
+          .catch((err) =>  res.status(500).json(err));
       },
 
 
