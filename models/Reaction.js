@@ -1,6 +1,6 @@
 const {Schema, Types}=require('mongoose');
 
-const thought = new mongoose.Schema({
+const thought = new Schema({
     reactionId:[
         // * Use Mongoose's ObjectId data type
         // * Default value is set to a new ObjectId
@@ -10,7 +10,7 @@ const thought = new mongoose.Schema({
           },
         ],
     reactionBody:{
-        type:String,
+        type: String,
         require: true,
         max: 280
     },
