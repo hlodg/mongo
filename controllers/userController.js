@@ -6,8 +6,8 @@ module.exports = {
         User.find()
           .then(async (users) => {
             const userObj = {
-              users,
-              headCount: await headCount(),
+              users
+              // headCount: await headCount,
             };
             return res.json(userObj);
           })
