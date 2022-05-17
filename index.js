@@ -1,5 +1,5 @@
 const express = require('express');
-const routes = require('./controllers/userRoutes');
+const router = require('./routes/index');
 
 const cwd = process.cwd();
 
@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(routes)
+app.use(router)
 
 
 app.listen(3001, ()=>{

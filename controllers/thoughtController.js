@@ -4,7 +4,7 @@ const { Thought, User } = require('../models')
 module.exports = {
     getThoughts(req, res) {
         Thought.find()
-            .then(thoughts)=> res.json(thoughts)
+            .then((thought)=> res.json(thought))
                 .catch((error) => res.status(500).json(error));
     },
     getOneThought(req, res) {

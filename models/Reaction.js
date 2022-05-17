@@ -1,4 +1,4 @@
-const {model}=require('mongoose');
+const {Schema, Types}=require('mongoose');
 
 const thought = new mongoose.Schema({
     reactionId:[
