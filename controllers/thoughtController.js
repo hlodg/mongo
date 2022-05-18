@@ -13,7 +13,7 @@ module.exports = {
             .then((thought) =>
                 !thought
                     ? res.status(404).json({ message: 'no thought with this id' })
-                    : res.json(thoughtText, username, userId));
+                    : res.json(thought));
     },
     createThought(req, res) {
         Thought.create(req.body)
