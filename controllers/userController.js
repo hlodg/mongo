@@ -32,9 +32,7 @@ module.exports = {
           .then(async (user) =>
             !user
               ? res.status(404).json({ message: 'No user with that ID' })
-              : res.json({
-                  username,
-                  email
+              : res.json({ user
                 })
           )
           .catch((err) => {
